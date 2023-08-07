@@ -27,7 +27,12 @@ export default {
 
         return component
       },
-      permissions: [],
+      permissions: [
+        {
+          action: 'plugin::meilisearch.read',
+          subject: null,
+        },
+      ],
     })
   },
 }

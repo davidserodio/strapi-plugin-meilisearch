@@ -66,4 +66,14 @@ module.exports = async ({ strapi }) => {
     lifecycle,
     store,
   })
+
+  const actions = [
+    {
+      section: 'plugins',
+      displayName: 'Access meilisearch menu',
+      uid: 'read',
+      pluginName: 'meilisearch',
+    }
+  ];
+  await strapi.admin.services.permission.actionProvider.registerMany(actions);
 }
