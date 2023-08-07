@@ -29,7 +29,7 @@ export default {
       },
       permissions: [
         {
-          action: 'plugin::meilisearch.read',
+          action: 'plugin::meilisearch.settings-page-read',
           subject: null,
         },
       ],

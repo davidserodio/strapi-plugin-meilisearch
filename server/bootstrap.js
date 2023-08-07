@@ -71,7 +71,7 @@ module.exports = async ({ strapi }) => {
     {
       section: 'plugins',
       displayName: 'Access meilisearch menu',
-      uid: 'read',
+      uid: 'settings-page-read',
       pluginName: 'meilisearch',
     }
   ];
