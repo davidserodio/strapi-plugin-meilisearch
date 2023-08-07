@@ -6,8 +6,9 @@
  */
 
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import usePermissions from '../../Hooks/usePermissions';
 // Utils
 import pluginId from '../../pluginId'
 // Containers
@@ -21,6 +22,12 @@ const theme = {
 }
 
 const App = () => {
+  const { canRead, loading } = usePermissions();
+
+  if (loading) return null;
+
+  if (!canRead) return <Redirect to="/" />;
+
   return (
     <ThemeProvider theme={theme}>
       <Switch>
